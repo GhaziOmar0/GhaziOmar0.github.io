@@ -275,6 +275,36 @@
   .proj h3{font-size:19px;}
   .proj p{color:var(--text-muted); font-size:14.5px; margin:0; flex:1;}
 
+  /* ---------- BOOK A CALL ---------- */
+  .book-card{
+    border:1px solid var(--indigo-dim);
+    border-radius:12px;
+    padding:40px 44px;
+    background:linear-gradient(135deg, rgba(110,123,255,0.08), transparent 60%), var(--surface);
+    display:flex; justify-content:space-between; align-items:center; gap:28px;
+    flex-wrap:wrap;
+  }
+  .book-card .avatar{
+    width:52px; height:52px; border-radius:50%;
+    background:var(--surface-2); border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:18px;
+    flex:none;
+  }
+  .book-left{display:flex; gap:18px; align-items:flex-start; max-width:560px;}
+  .book-left p{margin:0; color:var(--text-muted); font-size:15.5px;}
+  .book-left p strong{color:var(--text); font-weight:600;}
+  .book-btn{
+    flex:none;
+    background:var(--indigo); color:#0E1116;
+    font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px;
+    padding:14px 26px; border-radius:8px; text-decoration:none;
+    white-space:nowrap;
+    transition:opacity .2s;
+  }
+  .book-btn:hover{opacity:.85;}
+  @media(max-width:640px){ .book-card{padding:28px; flex-direction:column; align-items:flex-start;} .book-btn{width:100%; text-align:center;} }
+
   /* ---------- FOOTER ---------- */
   footer{border-top:1px solid var(--line); padding:64px 0 48px;}
   footer .wrap{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
@@ -301,6 +331,7 @@
       <a href="#writing">Writing</a>
       <a href="#certifications">Certifications</a>
       <a href="#projects">Projects</a>
+      <a href="#book" style="color:var(--indigo);">Book a call</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -593,6 +624,18 @@
         <h3>AI News &amp; Trend Research</h3>
         <p>Ongoing synthesis of AI industry news and trends, turned into readable content and analysis.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="book" style="padding-top:0;">
+  <div class="wrap">
+    <div class="book-card">
+      <div class="book-left">
+        <div class="avatar">GU</div>
+        <p><strong>Hey — Ghazi here.</strong> If you've got a role, project, or collaboration in mind and want to talk it through directly, grab a slot below. Happy to jump on a quick call.</p>
+      </div>
+      <a class="book-btn" href="https://calendly.com/ghaziumar" target="_blank" rel="noopener">Book a call</a>
     </div>
   </div>
 </section>
