@@ -263,6 +263,57 @@
   .cert h3{font-size:16px; line-height:1.35; font-family:'Space Grotesk',sans-serif; font-weight:600;}
   .cert .date{font-size:13px; color:var(--text-muted); margin-top:auto;}
 
+  /* ---------- FEATURED PROJECT (AI CCTV) ---------- */
+  .status-badge{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12.5px; color:var(--amber);
+    border:1px solid var(--amber-dim); border-radius:20px;
+    padding:6px 14px; margin-bottom:20px;
+  }
+  .status-badge::before{
+    content:""; width:7px; height:7px; border-radius:50%;
+    background:var(--amber); animation:pulse 2s infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:.35;}}
+  .fp-desc{font-size:16.5px; color:var(--text); max-width:680px; margin:0 0 30px;}
+  .fp-tech{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:44px;}
+  .fp-tech span{
+    font-size:13px; padding:6px 13px; background:var(--surface-2);
+    border-radius:6px; color:var(--text-muted); border:1px solid var(--line);
+  }
+  .status-pipeline{
+    display:flex; flex-direction:column; gap:0;
+    border:1px solid var(--line); border-radius:10px; overflow:hidden;
+    margin-bottom:48px;
+  }
+  .status-pipeline .stage{
+    display:flex; align-items:center; gap:16px;
+    padding:16px 22px; border-bottom:1px solid var(--line);
+    font-size:14.5px;
+  }
+  .status-pipeline .stage:last-child{border-bottom:none;}
+  .status-pipeline .stage.done{color:var(--text); background:rgba(242,169,60,0.04);}
+  .status-pipeline .stage.next{color:var(--text); background:rgba(110,123,255,0.06);}
+  .status-pipeline .stage.future{color:var(--text-muted);}
+  .status-pipeline .icon{
+    flex:none; width:20px; height:20px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; border:1px solid var(--line);
+  }
+  .stage.done .icon{background:var(--amber); color:#0E1116; border-color:var(--amber);}
+  .stage.next .icon{background:var(--indigo); color:#0E1116; border-color:var(--indigo);}
+  .stage.future .icon{color:var(--text-muted);}
+  .stage .label-tag{
+    margin-left:auto; font-size:11px; text-transform:uppercase; letter-spacing:.04em;
+    color:var(--text-muted);
+  }
+  .evidence-head{font-size:13px; color:var(--text-muted); margin-bottom:16px;}
+  .evidence-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;}
+  @media(max-width:900px){ .evidence-grid{grid-template-columns:1fr;} }
+  .evidence-item{border:1px solid var(--line); border-radius:8px; overflow:hidden; background:var(--surface-2);}
+  .evidence-item img{width:100%; display:block;}
+  .evidence-item .cap{padding:12px 14px; font-size:13px; color:var(--text-muted);}
+
   /* ---------- PROJECTS ---------- */
   .proj-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
   @media(max-width:900px){ .proj-grid{grid-template-columns:1fr;} }
@@ -330,6 +381,7 @@
       <a href="#research">Research</a>
       <a href="#writing">Writing</a>
       <a href="#certifications">Certifications</a>
+      <a href="#ai-cctv">AI CCTV</a>
       <a href="#projects">Projects</a>
       <a href="#book" style="color:var(--indigo);">Book a call</a>
       <a href="#contact">Contact</a>
@@ -360,7 +412,7 @@
     <div class="about-grid">
       <div>
         <p>I completed my BCA in 2025 and am currently pursuing an MCA at Manipal University Jaipur. Since June 2026, I've been working as an AI Marketing Analyst Intern at DigitalAdIn, where I move between SEO research, social-media traffic analysis, generative AI content creation, and day-to-day social publishing.</p>
-        <p class="muted">Alongside that, I build proof-of-work projects around AI-assisted content, marketing problems, trend research, and structured analysis — a way of testing ideas that don't fit inside the internship's scope.</p>
+        <p class="muted">Alongside that, I build practical AI and data-driven systems to explore how machine learning applies to real problems — currently an AI CCTV / video security monitoring pipeline, worked through in stages: video processing, object detection, tracking, and toward incident detection.</p>
       </div>
       <div>
         <ul class="focus-list">
@@ -602,6 +654,46 @@
   </div>
 </section>
 
+<section id="ai-cctv" style="border-top:1px solid var(--line); background:var(--surface);">
+  <div class="wrap">
+    <span class="status-badge">Currently building</span>
+    <div class="sec-head" style="margin-bottom:24px;">
+      <h2>AI CCTV / Video Security Monitoring</h2>
+    </div>
+    <p class="fp-desc">An actively developed AI-powered video security system that combines computer vision, object detection, object tracking, and temporal analysis to move toward automated incident detection and evidence generation. I've verified detection and tracking independently and am now integrating them into one pipeline — not a finished system yet.</p>
+    <div class="fp-tech">
+      <span>Python</span><span>OpenCV</span><span>YOLO11n</span><span>Ultralytics</span><span>PyTorch</span><span>Computer Vision</span><span>Object Detection</span><span>Object Tracking</span>
+    </div>
+
+    <div class="status-pipeline">
+      <div class="stage done"><span class="icon">✓</span> Video input &amp; frame processing <span class="label-tag">Verified</span></div>
+      <div class="stage done"><span class="icon">✓</span> Object detection (YOLO11n) <span class="label-tag">Verified</span></div>
+      <div class="stage done"><span class="icon">✓</span> Object tracking, persistent IDs <span class="label-tag">Verified</span></div>
+      <div class="stage next"><span class="icon">→</span> Integrating tracking into the detection pipeline <span class="label-tag">In progress</span></div>
+      <div class="stage future"><span class="icon">○</span> Temporal / event analysis <span class="label-tag">Next</span></div>
+      <div class="stage future"><span class="icon">○</span> Incident detection <span class="label-tag">Future</span></div>
+      <div class="stage future"><span class="icon">○</span> Evidence &amp; timestamping <span class="label-tag">Future</span></div>
+      <div class="stage future"><span class="icon">○</span> Alerts &amp; human review dashboard <span class="label-tag">Future</span></div>
+    </div>
+
+    <div class="evidence-head">Development evidence — real output from local testing</div>
+    <div class="evidence-grid">
+      <div class="evidence-item">
+        <img src="main.png" alt="main.py video processing code in VS Code">
+        <div class="cap">Video metadata &amp; frame-processing code, main.py</div>
+      </div>
+      <div class="evidence-item">
+        <img src="car.png" alt="YOLO object detection output with bounding boxes">
+        <div class="cap">YOLO11n detection output — person, car, dog correctly identified</div>
+      </div>
+      <div class="evidence-item">
+        <img src="persons.png" alt="YOLO detection on a street scene with multiple people">
+        <div class="cap">Detection on a real outdoor scene, multiple objects</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="projects">
   <div class="wrap">
     <div class="sec-head">
@@ -633,7 +725,7 @@
     <div class="book-card">
       <div class="book-left">
         <div class="avatar">GU</div>
-        <p><strong>Hey — Ghazi here.</strong> Have a role, project, or collaboration in mind? Let’s talk it through directly. Grab a slot below and let’s connect.</p>
+        <p><strong>Hey — Ghazi here.</strong> If you've got a role, project, or collaboration in mind and want to talk it through directly, grab a slot below. Happy to jump on a quick call.</p>
       </div>
       <a class="book-btn" href="https://calendly.com/ghaziumar" target="_blank" rel="noopener">Book a call</a>
     </div>
